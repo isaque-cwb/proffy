@@ -1,9 +1,7 @@
-import { BrowserRouter, Routes, Route, RouterProvider } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import TeacherList from './pages/TeacherList'
 import TeacherForm from './pages/TeacherForm'
 import Landing from './pages/Landing'
-
-
 
 
 
