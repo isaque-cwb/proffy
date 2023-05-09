@@ -1,13 +1,15 @@
-import React, { FormEvent, useState } from 'react'
-import  {useNavigate}  from 'react-router-dom';
+import React, { FormEvent, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PageHeader from '../../components/PageHeader';
-import './style.css'
+import './style.css';
 import Input from '../../components/Input';
-
-import warningIcon from '../../assets/images/icons/warning.svg'
+import { Flip, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import warningIcon from '../../assets/images/icons/warning.svg';
 import Textarea from '../../components/Textarea';
 import Select from '../../components/Select';
 import api from '../../services/api';
+
 
 function TeacherForm() {
 
@@ -32,10 +34,18 @@ function TeacherForm() {
     }
 
 
-    function setScheduleItemValue(position:number, field: string, value: string){
-        const updatedScheduleItems = scheduleItems.map((scheduleItem, index)=>{
-            if (index === position){
-                return {...scheduleItem, [field]: value}
+
+    const showToastMessage = () => {
+        toast.success('Success Notification !', {
+            position: toast.POSITION.TOP_RIGHT
+        });
+    };
+
+
+    function setScheduleItemValue(position: number, field: string, value: string) {
+        const updatedScheduleItems = scheduleItems.map((scheduleItem, index) => {
+            if (index === position) {
+                return { ...scheduleItem, [field]: value }
             }
 
             return scheduleItem
@@ -53,13 +63,38 @@ function TeacherForm() {
             bio,
             subject,
             cost: Number(cost),
-            schedule: scheduleItems 
-        }).then(()=>{
-            alert('Cadastro realizado com Sucesso!')
+            schedule: scheduleItems
+        }).then(() => {
 
-            navigate('/')
-        }).catch(()=>{
-            alert('Erro no Cadastro!')
+            toast.success('Cadastrado!', {
+                position: toast.POSITION.TOP_CENTER,
+                style: {
+
+                }
+            })
+
+            setName('')
+            setAvatar('')
+            setWhatsapp('')
+            setBio('')
+            setSubject('')
+            setCost('')
+            setScheduleItems([{ week_day: -1, from: '', to: '' }])
+
+            setTimeout(() => {
+
+                navigate('/')
+            }, 3000);
+
+        }).catch(() => {
+            toast.error('Erro no Cadastro', {
+                position: toast.POSITION.TOP_CENTER,
+                style: {
+
+                }
+            });
+
+
         })
 
         console.log({
@@ -152,11 +187,11 @@ function TeacherForm() {
 
                         {scheduleItems.map((scheduleItem, index) => (
                             <div key={scheduleItem.week_day} className="schedule-item">
-                                <Select 
+                                <Select
                                     name='subject'
                                     label='Dias da Semana'
                                     value={scheduleItem.week_day}
-                                    onChange={e=>setScheduleItemValue(index, 'week_day', e.target.value)}
+                                    onChange={e => setScheduleItemValue(index, 'week_day', e.target.value)}
                                     options={[
                                         { value: '0', label: 'Domingo' },
                                         { value: '1', label: 'Segunda-feira' },
@@ -167,19 +202,19 @@ function TeacherForm() {
                                         { value: '6', label: 'Sábado' }
                                     ]}
                                 />
-                                <Input 
-                                label='Das' 
-                                name='from' 
-                                type='time' 
-                                value={scheduleItem.from}
-                                onChange={e=>setScheduleItemValue(index, 'from', e.target.value)}
+                                <Input
+                                    label='Das'
+                                    name='from'
+                                    type='time'
+                                    value={scheduleItem.from}
+                                    onChange={e => setScheduleItemValue(index, 'from', e.target.value)}
                                 />
-                                <Input 
-                                label='Até' 
-                                name='to' 
-                                type='time' 
-                                value={scheduleItem.to}
-                                onChange={e=>setScheduleItemValue(index, 'to', e.target.value)}
+                                <Input
+                                    label='Até'
+                                    name='to'
+                                    type='time'
+                                    value={scheduleItem.to}
+                                    onChange={e => setScheduleItemValue(index, 'to', e.target.value)}
                                 />
                             </div>
                         ))}
@@ -190,9 +225,18 @@ function TeacherForm() {
                             Importante! <br />
                             Preencha todos os dados
                         </p>
-                        <button type='submit'>
+                        <button
+                            type='submit'
+                        >
                             Salvar Cadastro
+                            <ToastContainer
+                                autoClose={2500}
+                                closeButton={false}
+                                transition={Flip}
+                                closeOnClick={false}
+                            />
                         </button>
+
                     </footer>
                 </form>
             </main>
