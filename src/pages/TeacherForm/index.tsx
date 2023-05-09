@@ -156,6 +156,7 @@ function TeacherForm() {
                             value={subject}
                             onChange={(e) => { setSubject(e.target.value) }}
                             options={[
+                                { value: '', label: '' },
                                 { value: 'Artes', label: 'Artes' },
                                 { value: 'Biologia', label: 'Biologia' },
                                 { value: 'Ciências', label: 'Ciências' },
@@ -193,6 +194,7 @@ function TeacherForm() {
                                     value={scheduleItem.week_day}
                                     onChange={e => setScheduleItemValue(index, 'week_day', e.target.value)}
                                     options={[
+                                        { value: '', label: '' },
                                         { value: '0', label: 'Domingo' },
                                         { value: '1', label: 'Segunda-feira' },
                                         { value: '2', label: 'Terça-feira' },

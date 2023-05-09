@@ -100,14 +100,16 @@
 
 }
 
+#page-teacher-form main footer button:hover{
+    background: var(--color-secundary-dark); 
+}
+
 #page-teacher-form main footer label{
     color: var(--color-text-complement);
 }
 
 
-#page-teacher-form main footer button:hover{
-    background: var(--color-secundary-dark); 
-}
+
 
 
 @media(min-width: 700px){
