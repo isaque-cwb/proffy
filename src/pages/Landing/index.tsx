@@ -1,12 +1,32 @@
 import React from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 import styles from './styles'
 import landingImage from '../../assets/images/landing.png'
 import studyIcon from '../../assets/images/icons/study.png'
 import giveClassesIcon from '../../assets/images/icons/give-classes.png'
 import heartIcon from '../../assets/images/icons/heart.png'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
-function Landing(){
+
+type StackTypes = {
+    Landing: undefined,
+    GiveClasses: undefined
+}
+
+export type StackNavigationTypes = NativeStackNavigationProp<StackTypes>
+
+
+
+function Landing(): JSX.Element{
+
+
+    const {navigate} = useNavigation<StackNavigationTypes>()
+
+    function handleNavigateToGiveClassesPage(){
+        navigate('GiveClasses')
+    }
+
     return(
        
        <View style={styles.container} >
@@ -20,7 +40,9 @@ function Landing(){
             <Image source={studyIcon}/>
             <Text style={styles.buttonText}>Estudar</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={[styles.button, styles.buttonSecondary]} >
+            <TouchableOpacity 
+            onPress={handleNavigateToGiveClassesPage}
+            style={[styles.button, styles.buttonSecondary]} >
             <Image source={giveClassesIcon}/>
             <Text style={styles.buttonText}>Dar Aulas</Text>
             </TouchableOpacity>
