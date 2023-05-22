@@ -9,19 +9,12 @@ import heartIcon from '../../assets/images/icons/heart.png'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 
-type StackTypes = {
-    Landing: undefined,
-    GiveClasses: undefined
-}
-
-export type StackNavigationTypes = NativeStackNavigationProp<StackTypes>
-
 
 
 function Landing(): JSX.Element{
 
 
-    const {navigate} = useNavigation<StackNavigationTypes>()
+    const {navigate} = useNavigation()
 
     function handleNavigateToGiveClassesPage(){
         navigate('GiveClasses')
