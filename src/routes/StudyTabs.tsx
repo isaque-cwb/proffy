@@ -42,7 +42,8 @@ function StudyTabs() {
                 tabBarInactiveBackgroundColor: '#fafafc',
                 tabBarActiveBackgroundColor: '#ebebf5',
                 tabBarInactiveTintColor: '#c1bccc',
-                tabBarActiveTintColor: '#4E8799'
+                tabBarActiveTintColor: '#4E8799',
+                headerShown: false
             }}
         >
             <Screen 
