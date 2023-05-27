@@ -6,8 +6,7 @@ import landingImage from '../../assets/images/landing.png'
 import studyIcon from '../../assets/images/icons/study.png'
 import giveClassesIcon from '../../assets/images/icons/give-classes.png'
 import heartIcon from '../../assets/images/icons/heart.png'
-import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-
+import { RectButton } from 'react-native-gesture-handler'
 
 
 
@@ -29,16 +28,16 @@ function Landing(): JSX.Element{
             <Text style={styles.titleBold} >O que deseja fazer?</Text>
         </Text>
         <View style={styles.buttonContainer}>
-            <TouchableOpacity style={[styles.button, styles.buttonPrimary]} >
+            <RectButton style={[styles.button, styles.buttonPrimary]} >
             <Image source={studyIcon}/>
             <Text style={styles.buttonText}>Estudar</Text>
-            </TouchableOpacity>
-            <TouchableOpacity 
+            </RectButton>
+            <RectButton 
             onPress={handleNavigateToGiveClassesPage}
             style={[styles.button, styles.buttonSecondary]} >
             <Image source={giveClassesIcon}/>
             <Text style={styles.buttonText}>Dar Aulas</Text>
-            </TouchableOpacity>
+            </RectButton>
         </View>
         <Text  style={styles.totalConnections}>
             Total de 285 conexões já realizadas.
