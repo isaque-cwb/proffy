@@ -3,6 +3,7 @@ export declare global {
     interface RootParamList{
         Landing: undefined;
         GiveClasses: undefined;
+        Study: undefined
     }
    }
 }

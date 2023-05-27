@@ -19,6 +19,11 @@ function Landing(): JSX.Element{
         navigate('GiveClasses')
     }
 
+
+    function handleNavigateToGiveClassesPages(){
+        navigate('Study')
+    }
+
     return(
        
        <View style={styles.container} >
@@ -28,7 +33,9 @@ function Landing(): JSX.Element{
             <Text style={styles.titleBold} >O que deseja fazer?</Text>
         </Text>
         <View style={styles.buttonContainer}>
-            <RectButton style={[styles.button, styles.buttonPrimary]} >
+            <RectButton 
+            onPress={handleNavigateToGiveClassesPages}
+            style={[styles.button, styles.buttonPrimary]} >
             <Image source={studyIcon}/>
             <Text style={styles.buttonText}>Estudar</Text>
             </RectButton>
