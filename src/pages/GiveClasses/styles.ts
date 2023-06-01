@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         marginTop: 24,
         color: '#d4c2ff',
         fontSize: 16,
-        linheight: 26,
+        lineHeight: 26,
         fontFamily: 'Poppins_400Regular',
         maxWidth: 240
     },
