@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginRight: 8,
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     contactButtonText: {
         color: '#fff',
