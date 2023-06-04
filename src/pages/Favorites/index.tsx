@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {View, Text, ScrollView} from 'react-native'
 import styles from './styles';
 import PageHeader from './../../components/PageHeader/index';
-import TeacherItem from '../../components/TeacherItem';
+import TeacherItem, { Teacher } from './../../components/TeacherItem/index';
 
 
 
 function Favorites(){
+
+  const [teachers, setTeachers] = useState([])
+
   return(
     <View style={styles.container}>
-      <PageHeader title='Meus Proffys Favoritos'/>
+      <PageHeader title='Meus Proffys Favoritos' />
       <ScrollView
       style={styles.teacherList}
       contentContainerStyle={{
@@ -17,13 +20,8 @@ function Favorites(){
         paddingBottom: 16
       }}
       >
-
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
+        {teachers.map((teacher:Teacher)=><TeacherItem key={teacher.id}  teacher={teacher}/>
+)}
       </ScrollView>
     </View>
   )

@@ -22,9 +22,6 @@ function TeacherList() {
     setIsFiltersVisible(!isFiltersVisiblie)
   }
 
-  function veificaTamanhoLista(lista: Teacher[]){
-    return lista.length
-  }
 
   async function handleFilterSubmit(){
    const {data} = await api.get('classes', {

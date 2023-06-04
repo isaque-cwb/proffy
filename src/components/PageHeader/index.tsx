@@ -9,7 +9,7 @@ import { useNavigation } from '@react-navigation/native';
 
 interface PageHeaderProps {
   title: string,
-  children: ReactNode,
+  children?: ReactNode,
   headerRigth?: ReactNode
 }
 
