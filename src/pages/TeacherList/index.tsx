@@ -7,6 +7,7 @@ import { Feather } from '@expo/vector-icons'
 import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
 import api from './../../services/api';
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { useFocusEffect } from '@react-navigation/native';
 
 
 function TeacherList() {
@@ -31,6 +32,12 @@ function TeacherList() {
       }
     })
   }
+
+
+  useFocusEffect(()=>{
+    loadFavorites()
+  })
+
 
 
 
