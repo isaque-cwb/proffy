@@ -5,16 +5,16 @@
 ## App Web - ReactJS
 #### Primeira tela - Home 
 
-![image](https://github.com/isaque-cwb/proffy/assets/57151930/6309676d-c940-4cec-9536-552ceeaeb9b5)
+<img src="https://github.com/isaque-cwb/proffy/assets/57151930/6309676d-c940-4cec-9536-552ceeaeb9b5" width="600" height="300"/>
 
 #### Tela de cadastro de um proffy
 
-![image](https://github.com/isaque-cwb/proffy/assets/57151930/e9e6116f-f4e2-4628-82da-18fb33d8185d)
+<img src="https://github.com/isaque-cwb/proffy/assets/57151930/e9e6116f-f4e2-4628-82da-18fb33d8185d" width="600" height="300"/>
 
 
 #### tela de filtrar um proffy 
 
-![image](https://github.com/isaque-cwb/proffy/assets/57151930/903bb405-26f2-46af-92be-0ec8011d7198)
+<img src="https://github.com/isaque-cwb/proffy/assets/57151930/903bb405-26f2-46af-92be-0ec8011d7198" width="600" height="400"/>
 
 
 
