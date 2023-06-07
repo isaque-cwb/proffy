@@ -1,4 +1,4 @@
-# Funcionalidades
+# Funcionalidades da API
 
 
 ## Conexões
